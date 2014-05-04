@@ -11,10 +11,10 @@ http://cxf.apache.org/schemas/jaxrs.xsd">
     <import resource="classpath:META-INF/cxf/cxf.xml"/>
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
 
-    <bean class="org.apache.cxf.transport.local.LocalTransportFactory" lazy-init="false">
+    <bean class="org.apache.cxf.transport.local.jndi.LocalJndiTransportFactory" lazy-init="false">
         <property name="transportIds">
             <list>
-                <value>http://cxf.apache.org/transports/local</value>
+                <value>http://cxf.apache.org/transports/local-jndi</value>
             </list>
         </property>
     </bean>
@@ -26,7 +26,7 @@ http://cxf.apache.org/schemas/jaxrs.xsd">
     </jaxrs:server>
     <bean id="client" class="com.mandy.ClientResource"/>
 
-    <jaxrs:server address="local://server" id="serverService">
+    <jaxrs:server address="local-jndi://server" id="serverService">
         <jaxrs:serviceBeans>
             <ref bean="server"/>
         </jaxrs:serviceBeans>

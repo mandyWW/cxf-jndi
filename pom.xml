@@ -58,7 +58,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-local</artifactId>
+            <artifactId>cxf-rt-transports-local-jndi</artifactId>
             <version>${cxf.version}</version>
         </dependency>
 

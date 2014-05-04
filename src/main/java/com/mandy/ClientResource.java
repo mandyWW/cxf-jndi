@@ -19,7 +19,7 @@ public class ClientResource {
     @Produces({"application/json"})
     public Response getResource() {
         // call the server..
-        WebClient client = WebClient.create("local://server");
+        WebClient client = WebClient.create("local-jndi://server");
         Response response = client.get(Response.class);
         return Response.status(Response.Status.OK)
                 .entity(response.readEntity(String.class))
